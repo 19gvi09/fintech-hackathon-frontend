@@ -1,0 +1,10 @@
+$total-cols: 12;
+$gutter: 30px;
+
+@function -width($cols) {
+    @return calc((100% + $gutter) / $total-cols * $cols - $gutter);
+}
+
+@function -margin($cols) {
+    @return calc((100% + $gutter) / $total-cols * $cols + $gutter);
+}
