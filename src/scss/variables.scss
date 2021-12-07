@@ -1,10 +1,12 @@
+$neg: -1;
+$grid-breakpoint: 1230px;
 $total-cols: 12;
 $gutter: 30px;
 
 @function -width($cols) {
-    @return calc((100% + $gutter) / $total-cols * $cols - $gutter);
+    @return calc(($grid-breakpoint + $gutter) / $total-cols * $cols - $gutter);
 }
 
 @function -margin($cols) {
-    @return calc((100% + $gutter) / $total-cols * $cols + $gutter);
+    @return calc(($grid-breakpoint + $gutter) / $total-cols * $cols + $gutter);
 }

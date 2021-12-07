@@ -3,7 +3,7 @@
         <div class="row">
             <div class="logo">
                 <div class="logo__img" @click="$router.push('/')"></div>
-                <h1 class="logo__text" @click="$router.push('/')">Forta</h1>
+                <h2 class="logo__text" @click="$router.push('/')">Forta</h2>
             </div>
             <div class="navbar">
                 <router-link class="navbar__link" to="/about">Для частных лиц</router-link>
@@ -33,6 +33,7 @@ gutter = 30px
     margin: 0 auto;
     max-width: 1230px;
     padding: 20px 0;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.02);
 }
 
 .row {
@@ -85,11 +86,6 @@ gutter = 30px
     &__button {
         font-weight: 700;
         line-height: 19px;
-        cursor: pointer;
-        border: none;
-        outline: none;
-        background: none;
-        padding: 0;
     }
 
     .purple {

@@ -1,6 +1,6 @@
 <template>
     <div class="footer">
-        <div class="wrapper">
+        <div class="inner">
             <div class="row">
                 <div class="ta-left">
                     <h4 class="heading">Наши продукты</h4>
@@ -12,10 +12,10 @@
                 <div class="contacts">
                     <h4 class="heading">Контакты</h4>
                     <div class="socials">
-                        <a href="" class="socials__link"></a>
-                        <a href="" class="socials__link"></a>
-                        <a href="" class="socials__link"></a>
-                        <a href="" class="socials__link"></a>
+                        <a href="" class="socials__link"><img src="../assets/vk-link.svg" alt="vk"></a>
+                        <a href="" class="socials__link"><img src="../assets/linkedin-link.svg" alt="linkedin"></a>
+                        <a href="" class="socials__link"><img src="../assets/facebook-link.svg" alt="fb"></a>
+                        <a href="" class="socials__link"><img src="../assets/instagram-link.svg" alt="inst"></a>
                     </div>
                     <a href="tel:+74994907746" class="contacts__phone link">+7 (499) 490-77-46</a>
                     <h5 class="subheading">Техподдержка</h5>
@@ -58,7 +58,7 @@ export default {
 }
 
 /* Layout styles */
-.wrapper {
+.inner {
     margin: 0 auto;
     max-width: 1230px;
 }
@@ -110,14 +110,15 @@ export default {
     margin: 20px 0;
 
     &__link {
-        background: #F9F9FC;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
         margin: 0 15px 0 0;
 
         &:last-child {
             margin: 0;
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
         }
     }
 }
@@ -134,9 +135,6 @@ export default {
 }
 
 .button {
-    cursor: pointer;
-    border: none;
-    outline: none;
     background: #F9F9FC;
     padding: 10px 33px;
     border-radius: 30px;

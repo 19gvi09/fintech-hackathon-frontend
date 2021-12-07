@@ -27,4 +27,11 @@ export default {
     font-size: 16px;
 }
 
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+}
 </style>
