@@ -6,11 +6,26 @@
         </div>
         <div class="content">
             <div class="tabs">
-                <button class="tabs__tab" :class="{ active: isActive === 'personal' }" @click="setTab('personal')">Для частных лиц</button>
-                <button class="tabs__tab" :class="{ active: isActive === 'business' }" @click="setTab('business')">Для бизнеса</button>
-            </div>
-            <div class="tabs__content">
-
+                <div>
+                    <button class="tabs__tab" :class="{ active: isActive === 'personal' }" @click="setTab('personal')">Для частных лиц</button>
+                    <button class="tabs__tab" :class="{ active: isActive === 'business' }" @click="setTab('business')">Для бизнеса</button>
+                </div>
+                <div class="tabs__content">
+                    <div class="section">
+                        <h3 class="section__title">Шаг 1. Выбери услугу</h3>
+                        <div class="section__content">
+                            <button class="button" :class="{ active: selectedService === 'mortgage' }" @click="setService('mortgage')">Платеж по ипотеке</button>
+                            <button class="button" :class="{ active: selectedService === 'credit' }" @click="setService('credit')">Платеж по кредиту</button>
+                            <button class="button" :class="{ active: selectedService === 'deposit' }" @click="setService('deposit')">Доход по вкладу</button>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h3 class="section__title">Шаг 2. Выбери кого-нибудь</h3>
+                        <div class="section__content">
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -21,12 +36,16 @@ export default {
     name: "Calculator",
     data() {
         return {
-            isActive: "personal"
+            isActive: "personal",
+            selectedService: "mortgage",
         }
     },
     methods: {
         setTab(state) {
             this.isActive = state
+        },
+        setService(state) {
+            this.selectedService = state
         }
     }
 }
@@ -66,11 +85,50 @@ export default {
             padding: 20px 0;
             background: #F9F9FC;
             border-radius: 20px 20px 0 0;
+
+            &.active {
+                background: #FFF;
+                box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.02);
+            }
         }
 
-        .active {
-            background: #FFF;
-            box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.02);
+        &__content {
+            padding: 90px 75px 70px;
+            box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.02);
+
+            .section {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                margin: 140px 0 0;
+
+                &:first-child {
+                    margin: 0;
+                }
+
+                &__title {
+                    font-size: 20px;
+                    line-height: 30px;
+                    margin: 0;
+                }
+
+                &__content {
+                    margin: 40px 0 0;
+
+                    > .button {
+                        padding: 10px 34px;
+                        border: solid 1px #E5E5E5;
+                        border-radius: 30px;
+                        margin: 0 20px 0 0;
+
+                        &.active {
+                            color: #FFF;
+                            background: #562CD3;
+                            border: solid 1px #562CD3;
+                        }
+                    }
+                }
+            }
         }
     }
 }
