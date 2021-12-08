@@ -37,6 +37,7 @@ container {
          line-height: 30px;
          font-weight: normal;
          line-height: 29px;
+         color: #333333;
      }
   }
 }
