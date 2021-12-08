@@ -3,14 +3,16 @@
   <Service />
   <Advatages />
   <NewService />
+  <MenuRequirements />
 </template>
 
 
 <script>
 import Service from "../components/Product/Service.vue";
 import PreviewProduct from "../components/Product/PreviewProduct.vue";
-import Advatages from "../components/Product/Advantages.vue"
-import NewService from "../components/Product/NewService.vue"
+import Advatages from "../components/Product/Advantages.vue";
+import NewService from "../components/Product/NewService.vue";
+import MenuRequirements from "../components/Product/MenuRequirements.vue";
 
 export default {
   name: "Product",
@@ -18,7 +20,8 @@ export default {
     Service,
     PreviewProduct,
     Advatages,
-    NewService
+    NewService,
+    MenuRequirements,
   },
 };
 </script>
