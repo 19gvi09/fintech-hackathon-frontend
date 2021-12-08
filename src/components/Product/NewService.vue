@@ -36,6 +36,7 @@ container {
       font-weight: 300;
       font-size: 16px;
       line-height: 180%;
+      color: #333333;
     }
   }
 }
