@@ -73,24 +73,20 @@ export default {
   display: inline-block;
   padding-left: 50px;
   span {
-    font-family: Lato, sans-serif;
-    font-style: normal;
     font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
+
   }
   p {
     margin-top: 23px;
   }
   p ::before {
-    margin-left: -25px;
     content: "";
     background: #562cd3;
     border-radius: 1ch;
     padding-inline: 1ch;
-    margin-inline-end: 1ch;
-    height: 2px;
-    width: 2px;
+    font-size: 6px;
+    margin-inline-end: 2ch;
+    vertical-align: middle;
   }
 }
 .bloc1 {
@@ -99,7 +95,7 @@ export default {
   height: 300px;
 }
 .value_of_credit {
-  margin-top: 30px;
+  margin-top: 10px;
   span {
     font-family: Lato, sans-serif;
     font-style: normal;
@@ -107,15 +103,14 @@ export default {
     font-size: 16px;
     line-height: 19px;
   }
-  ::before {
-    margin-left: -25px;
+  span::before {
     content: "";
     background: #562cd3;
     border-radius: 1ch;
     padding-inline: 1ch;
-    margin-inline-end: 1ch;
-    height: 2px;
-    width: 2px;
+    font-size: 6px;
+    margin-inline-end: 2ch;
+    vertical-align: middle;
   }
 }
 .target_of_credit {
@@ -129,15 +124,14 @@ export default {
     font-size: 16px;
     line-height: 19px;
   }
-  ::before {
-    margin-left: -25px;
+  span::before {
     content: "";
     background: #562cd3;
     border-radius: 1ch;
     padding-inline: 1ch;
-    margin-inline-end: 1ch;
-    height: 2px;
-    width: 2px;
+    font-size: 6px;
+    margin-inline-end: 2ch;
+    vertical-align: middle;
   }
 }
 
@@ -172,7 +166,6 @@ ul.nav li a {
   display: block;
   padding: 10px 10px 10px 10px;
   color: black;
-  
 }
 ul.nav li ul {
   display: none; /*скрываем вложенные пункты*/
@@ -188,7 +181,6 @@ ul.nav li:hover {
   height: 40px;
   width: 230px;
   border-radius: 20px;
-
 }
 ul.nav li a:hover {
   color: #ffffff;
@@ -200,7 +192,6 @@ ul.nav {
   height: 30px;
   margin: 0 auto;
   max-height: 60px;
-  
 }
 ul.nav li:hover > ul {
   border-top: 1px solid white;
@@ -216,6 +207,6 @@ ul.nav li:hover > ul {
   display: absolute;
   margin: 0 auto;
   left: 0;
-  top:50px;
+  top: 50px;
 }
 </style>
