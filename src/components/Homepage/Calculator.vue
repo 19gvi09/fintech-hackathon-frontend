@@ -6,29 +6,61 @@
         </div>
         <div class="content">
             <div class="tabs">
-                <button class="tabs__tab" :class="{ active: isActive === 'personal' }" @click="setTab('personal')">Для частных лиц</button>
-                <button class="tabs__tab" :class="{ active: isActive === 'business' }" @click="setTab('business')">Для бизнеса</button>
-            </div>
-            <div class="tabs__content">
-
+                <div>
+                    <button class="tabs__tab" :class="{ active: isActive === 'personal' }" @click="setTab('personal')">Для частных лиц</button>
+                    <button class="tabs__tab" :class="{ active: isActive === 'business' }" @click="setTab('business')">Для бизнеса</button>
+                </div>
+                <div class="inner">
+                    <CalculatorForm :isActive="isActive" />
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import CalculatorForm from '../CalculatorForm.vue'
+
+
 export default {
     name: "Calculator",
+    components: {
+        CalculatorForm,
+    },
     data() {
         return {
-            isActive: "personal"
+            isActive: "personal",
+            selectedService: "mortgage",
+            selectedCompany: 1,
+            settings: {
+                itemsToShow: 5,
+                wrapAround: true,
+                snapAlign: 'start',
+            },
+            breakpoints: {
+                1230: {
+                    itemsToShow: 5,
+                    snapAlign: 'start',
+                }
+            },
+            min: 0,
+            max: 1000000000,
+            firstSlider: 0,
+            secondSlider: 0,
+            thirdSlider: 0
         }
     },
     methods: {
         setTab(state) {
             this.isActive = state
+        },
+        setService(state) {
+            this.selectedService = state
+        },
+        setCompany(state) {
+            this.selectedCompany = state
         }
-    }
+    },
 }
 </script>
 
@@ -36,7 +68,7 @@ export default {
 .wrapper {
     margin: 0 auto;
     padding: 90px 0;
-    max-width: 1230px;
+    max-width: $grid-breakpoint;
 }
 
 .heading {
@@ -66,12 +98,17 @@ export default {
             padding: 20px 0;
             background: #F9F9FC;
             border-radius: 20px 20px 0 0;
-        }
 
-        .active {
-            background: #FFF;
-            box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.02);
+            &.active {
+                background: #FFF;
+                box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.02);
+            }
         }
+    }
+
+    .inner {
+        padding: 90px (-cols(1) - $gutter) 70px;
+        box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.02);
     }
 }
 </style>
