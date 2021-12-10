@@ -17,11 +17,17 @@ export default {
 <style lang="scss" scoped>
 .card {
     position: relative;
-    width: -width(3);
-    height: 410px;
-    background: cadetblue;
+    //width: -width(3);
     flex-shrink: 0;
     border-radius: 10px;
+
+    img {
+        width: -width(3);
+
+        @include breakpoint(xs) {
+            width: -width(2);
+        }
+    }
 }
 
 .button {
@@ -35,5 +41,9 @@ export default {
     font-weight: 700;
     line-height: 22px;
     border-radius: 30px;
+
+    @include breakpoint(xs) {
+        display: none;
+    }
 }
 </style>

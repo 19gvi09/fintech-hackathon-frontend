@@ -48,7 +48,7 @@ export default {
     margin: 60px 0 0;
 
     .inner {
-        padding: 50px (-cols(1) - $gutter) 90px;
+        padding: 50px -width(1) 90px;
         box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.02);
     }
 }

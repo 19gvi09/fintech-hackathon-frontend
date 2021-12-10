@@ -4,8 +4,13 @@
             <div class="row">
                 <div class="col">
                     <h1 class="title">Сначала просто попробуй</h1>
-                    <h5 class="subtitle">Мы сделали демо-версию, чтобы можно было посмотреть, как работает наш сервис в течении 7 дней.</h5>
-                    <button class="button">Поробовать бесплатно</button>
+                    <h5 class="subtitle">В нашем сервисе можно забронировать предложение и в течении 7-ми дней отказаться без потерь</h5>
+                    <button class="button">
+                        Попробовать
+                        <svg class="button__arrow" width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 5H12M12 5L8 1M12 5L8 9" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                 </div>
                 <img class="img" src="../../assets/preview-img.png" alt="img">
             </div>
@@ -21,8 +26,8 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
-    background: radial-gradient(98.89% 173.8% at 5.07% 16.39%, #E0E2FB 0%, #B8A3F5 100%);
-    padding: 128px 0 72px;
+    background: $radial;
+    padding: 108px 0 120px;
 }
 
 .inner {
@@ -36,9 +41,10 @@ export default {
 }
 
 .col {
-    padding: 22px 0 0;
+    max-width: -cols(6);
+    padding: 42px 0 0;
     text-align: left;
-    color: #FFF;
+    color: $white1;
 }
 
 .title {
@@ -48,25 +54,38 @@ export default {
 }
 
 .subtitle {
-    margin: 20px 0 0;
+    margin: 40px 0 0;
     font-size: 24px;
-    line-height: 29px;
+    line-height: 30px;
     font-weight: 400;
 }
 
 .button {
-    background: #7020DF;
-    color: #FFF;
-    margin: 70px 0 0;
-    padding: 9px 45px;
+    background: $purple1;
+    color: $white1;
+    box-shadow: $sh_btn;
+    margin: 50px 0 0;
+    padding: 9px 42px;
     border-radius: 30px;
     font-size: 18px;
     font-weight: 700;
     line-height: 22px;
+
+    &:hover {
+        box-shadow: $sh_btn-hover;
+    }
+
+    &:active {
+        background: $purple_dark1;
+    }
+
+    &__arrow {
+        margin: 0 0 0 5px;
+    }
 }
 
 .img {
-    width: 455px;
-    height: 580px;
+    width: 100%;
+    max-width: 455px;
 }
 </style>

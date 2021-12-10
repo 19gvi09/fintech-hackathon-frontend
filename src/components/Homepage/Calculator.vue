@@ -37,12 +37,6 @@ export default {
                 wrapAround: true,
                 snapAlign: 'start',
             },
-            breakpoints: {
-                1230: {
-                    itemsToShow: 5,
-                    snapAlign: 'start',
-                }
-            },
             min: 0,
             max: 1000000000,
             firstSlider: 0,
@@ -107,7 +101,7 @@ export default {
     }
 
     .inner {
-        padding: 90px (-cols(1) - $gutter) 70px;
+        padding: 90px -width(1) 70px;
         box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.02);
     }
 }

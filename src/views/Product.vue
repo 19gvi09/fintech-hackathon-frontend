@@ -1,7 +1,6 @@
 <template>
   <PreviewProduct />
-  <Service />
-  <Advatages />
+  <Advatages style="background: #F9F9FC"/>
   <NewService />
   <MenuRequirements />
   <Form />
@@ -9,9 +8,8 @@
 
 
 <script>
-import Service from "../components/Product/Service.vue";
 import PreviewProduct from "../components/Product/PreviewProduct.vue";
-import Advatages from "../components/Product/Advantages.vue";
+import Advatages from "../components/Advantages.vue";
 import NewService from "../components/Product/NewService.vue";
 import MenuRequirements from "../components/Product/MenuRequirements.vue";
 import Form from '../components/Product/Form.vue';
@@ -19,7 +17,6 @@ import Form from '../components/Product/Form.vue';
 export default {
   name: "Product",
   components: {
-    Service,
     PreviewProduct,
     Advatages,
     NewService,
@@ -29,9 +26,3 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.wrapper {
-  margin: 0 auto;
-  max-width: $grid-breakpoint;
-}
-</style>

@@ -1,9 +1,9 @@
 <template>
     <div class="wrapper">
         <div class="inner">
-            <div class="header">
-                <h2 class="header__title">Выбери лучшее</h2>
-                <p class="header__subtitle">Теперь вам не нужно часами листать сайты с непрозрачными условиями. Вы можете выбрать подходящую услугу прямо здесь, а чтобы вы были уверены, что все сделано верно, наш консультант проверит вашу заявку.</p>
+            <div class="heading">
+                <h2 class="heading__title">Выбери лучшее</h2>
+                <p class="heading__subtitle">Теперь вам не нужно часами листать сайты с непрозрачными условиями. Вы можете выбрать подходящую услугу прямо здесь, а чтобы вы были уверены, что все сделано верно, наш консультант проверит вашу заявку.</p>
             </div>
         </div>
         <div class="container">
@@ -14,22 +14,27 @@
                         <button class="button" :class="{ active: isActive === 'business' }" @click="setTab(business)">Для бизнеса</button>
                     </div>
                     <div>
-                        <button class="button">
+                        <button class="button" @click="$router.push('/catalog')">
                             Смотреть всё
-                            <img class="ml-5" src="../../assets/arrow-sm.svg" alt="arrow-sm">
+                            <svg class="button__img" width="13" height="10" viewBox="0 0 13 10">
+                                <use xlink:href='../../assets/arrow-sm.svg#img'></use>
+                            </svg>
                         </button>
                     </div>
                 </div>
+                <div class="row">
+                    <Carousel class="carousel" :settings="settings"  :breakpoints="breakpoints">
+                        <Slide class="slide" v-for="slide in cards" :key="slide">
+                            <Card :n="slide" />
+                        </Slide>
+                        <template #addons="{ slideWidth }">
+                            <Navigation v-if="slideWidth > 300" />
+                            <Pagination v-if="slideWidth > 300" />
+                        </template>
+                    </Carousel>
+                </div>
             </div>
-            <Carousel class="inner mt-50" :settings="settings"  :breakpoints="breakpoints">
-                <Slide v-for="slide in cards" :key="slide">
-                    <Card :n="slide" />
-                </Slide>
-                <template #addons>
-                    <Navigation />
-                    <Pagination />
-                </template>
-            </Carousel>
+            
         </div>
     </div>
 </template>
@@ -62,12 +67,15 @@ export default {
             cards: null,
             settings: {
                 itemsToShow: 4,
-                wrapAround: true
+                wrapAround: true,
+                snapAlign: "start"
             },
             breakpoints: {
                 1230: {
-                    itemsToShow: 4,
-                    snapAlign: 'start',
+                    snapAlign: "start",
+                },
+                375: {
+                    snapAlign: "start",
                 }
             },
         }
@@ -86,16 +94,16 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
-    padding: 60px 0 63px;
+    padding: 140px 0;
     background: #F9F9FC;
 }
 
 .inner {
     margin: 0 auto;
-    max-width: 1230px;
+    max-width: $grid-breakpoint;
 }
 
-.header {
+.heading {
     max-width: 660px;
     margin: 0 auto;
 
@@ -122,36 +130,38 @@ export default {
 }
 
 .button {
-    border: solid 1px #E5E5E5;
+    border: solid 1px $grey1;
+    color: $grey2;
     border-radius: 30px;
     padding: 10px 33px;
 
     &.active {
-        border: solid 1px #562CD3;
+        border: solid 1px $purple1;
+        color: $black;
+    }
+
+    &:nth-child(2) {
+        margin: 0 0 0 20px;
+    }
+
+    &:hover {
+        border: solid 1px $purple1;
+        color: $purple1;
+    }
+
+    &:active {
+        color: $black;
+    }
+
+    &__img {
+        margin: 0 0 0 5px;
+        fill: currentColor;
     }
 }
 
-/* Additional styles */
-.px-41 {
-    padding-right: 41px;
-    padding-left: 41px;
-}
-
-.px-33 {
-    padding-right: 33px;
-    padding-left: 33px;
-}
-
-.mr-20 {
-    margin-right: 20px;
-}
-
-.ml-5 {
-    margin-left: 5px;
-}
-
-.mt-50 {
-    margin-top: 50px;
+.carousel {
+    margin: 60px 0 0;
+    width: 100%;
 }
 </style>
 
@@ -162,8 +172,8 @@ export default {
     width: 50px;
     height: 50px;
     top: calc(50% - 25px);
-    background: #FFF;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05);
+    background: $white1;
+    box-shadow: $sh_arrow;
 }
 
 .carousel__pagination {
@@ -173,10 +183,10 @@ export default {
         border-radius: 50%;
         height: 7px;
         width: 7px;
-        background: #E5E5E5;
+        background: $grey1;
 
         &--active {
-            background: #B8B8F6;
+            background: $purple2;
         }
     }
 }

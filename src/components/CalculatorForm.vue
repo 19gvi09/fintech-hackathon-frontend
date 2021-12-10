@@ -216,7 +216,7 @@ export default {
     }
 
     .carousel {
-        max-width: $grid-breakpoint - 2 * (-cols(1) - $gutter);
+        max-width: calc($grid-breakpoint - 150px);
 
         .card {
             background: #F9F9FC;
