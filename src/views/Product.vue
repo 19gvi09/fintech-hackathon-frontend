@@ -29,9 +29,3 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.wrapper {
-  margin: 0 auto;
-  max-width: $grid-breakpoint;
-}
-</style>
