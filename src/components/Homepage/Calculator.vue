@@ -11,7 +11,7 @@
                     <button class="tabs__tab" :class="{ active: isActive === 'business' }" @click="setTab('business')">Для бизнеса</button>
                 </div>
                 <div class="inner">
-                    <CalculatorForm :isActive="isActive" />
+                    <CalculatorForm />
                 </div>
             </div>
         </div>

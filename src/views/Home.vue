@@ -1,9 +1,7 @@
 <template>
-    <div class="home">
-        <Preview />
-        <Offers />
-        <Calculator />
-    </div>
+    <Preview />
+    <Offers />
+    <Calculator />
 </template>
 
 <script>

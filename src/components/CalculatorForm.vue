@@ -89,7 +89,7 @@ export default {
         Navigation,
     },
     props: {
-        isActive: String,
+        
     },
     data() {
         return {

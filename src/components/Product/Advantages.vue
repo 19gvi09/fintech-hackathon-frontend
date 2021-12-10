@@ -38,10 +38,11 @@ container {
   display: flex;
   justify-content: center;
   background: #f9f9fc;
-  font-family: Lato, sans-serif;
+  
   .place {
     width: 390px;
     margin: 30px;
+
     .place_t {
       font-style: normal;
       font-weight: normal;
@@ -50,6 +51,7 @@ container {
       text-align: center;
       padding-bottom: 130px;
     }
+
     p {
       font-style: normal;
       font-weight: bold;
@@ -57,6 +59,7 @@ container {
       text-align: center;
       margin: 10px 0 30px;
     }
+    
     h1 {
       font-style: normal;
       font-weight: 300;
