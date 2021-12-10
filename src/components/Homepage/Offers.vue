@@ -21,18 +21,32 @@
                     </div>
                 </div>
             </div>
-            <Slider :cards="cards" class="mt-50" />
+            <Carousel class="inner mt-50" :settings="settings"  :breakpoints="breakpoints">
+                <Slide v-for="slide in cards" :key="slide">
+                    <Card :n="slide" />
+                </Slide>
+                <template #addons>
+                    <Navigation />
+                    <Pagination />
+                </template>
+            </Carousel>
         </div>
     </div>
 </template>
 
 <script>
-import Slider from './Slider.vue'
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import Card from './Card.vue'
 
 export default {
     name: "Offers",
     components: {
-        Slider
+        Carousel,
+        Slide,
+        Pagination,
+        Navigation,
+        Card,
     },
     data() {
         return {
@@ -46,6 +60,16 @@ export default {
                 values: 6,
             },
             cards: null,
+            settings: {
+                itemsToShow: 4,
+                wrapAround: true
+            },
+            breakpoints: {
+                1230: {
+                    itemsToShow: 4,
+                    snapAlign: 'start',
+                }
+            },
         }
     },
     methods: {
@@ -128,5 +152,32 @@ export default {
 
 .mt-50 {
     margin-top: 50px;
+}
+</style>
+
+<style lang="scss">
+.carousel__prev,
+.carousel__next {
+    color: #0D0D0D;
+    width: 50px;
+    height: 50px;
+    top: calc(50% - 25px);
+    background: #FFF;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.carousel__pagination {
+    padding: 0;
+
+    &-button {
+        border-radius: 50%;
+        height: 7px;
+        width: 7px;
+        background: #E5E5E5;
+
+        &--active {
+            background: #B8B8F6;
+        }
+    }
 }
 </style>
