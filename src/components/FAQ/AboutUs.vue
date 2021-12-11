@@ -1,13 +1,12 @@
 <template>
   <div class="about_us"><h4>О нас</h4></div>
   <div class="list_of_us">
-
-      
-      
-
     <div class="accordion">
       <input class="toggle-box" id="block-1" type="checkbox" />
-      <label for="block-1">Кто такие Forta Payments?<div class="icon-open"></div></label>
+      <label for="block-1"
+        >Кто такие Forta Payments?
+        <div class="icon-open"></div
+      ></label>
       <div class="box">
         Forta Payment - это финтех-платформа, которая стремится упростить
         финансовую отрасль, предлагая инновационные решения. Наши услуги
@@ -20,14 +19,15 @@
         Forta Payment - это финтех-платформа, которая стремится упростить
         финансовую отрасль, предлагая инновационные решения. Наши услуги
         включают личные и бизнес-счета, прием и обработку онлайн-транзакций,
-        международные платежи, платежные карты и многое другое.      </div>
+        международные платежи, платежные карты и многое другое.
+      </div>
       <input class="toggle-box" id="block-3" type="checkbox" />
       <label for="block-3">Какие услуги мы предлагаем?</label>
       <div class="box">
         Forta Payment - это финтех-платформа, которая стремится упростить
         финансовую отрасль, предлагая инновационные решения. Наши услуги
         включают личные и бизнес-счета, прием и обработку онлайн-транзакций,
-        международные платежи, платежные карты и многое другое.      
+        международные платежи, платежные карты и многое другое.
       </div>
       <input class="toggle-box" id="block-4" type="checkbox" />
       <label for="block-4">Почему люди предпочитают Forta?</label>
@@ -35,10 +35,9 @@
         Forta Payment - это финтех-платформа, которая стремится упростить
         финансовую отрасль, предлагая инновационные решения. Наши услуги
         включают личные и бизнес-счета, прием и обработку онлайн-транзакций,
-        международные платежи, платежные карты и многое другое.      
+        международные платежи, платежные карты и многое другое.
       </div>
     </div>
-    
   </div>
 </template>
 
@@ -66,7 +65,6 @@ export default {
   }
 }
 
-
 // Источник аккордеона https://dbmast.ru/blok-akkordeon-na-css3-eksperimenty-prodolzhayutsya
 
 .accordion {
@@ -81,18 +79,17 @@ export default {
 .toggle-box {
   /* по умаолчанию скрыт */
   display: none;
-
 }
 
 /* формируем внешний вид панелей аккордеона */
 
 .toggle-box + label {
-  color: #0D0D0D;
+  color: #0d0d0d;
   cursor: pointer;
   display: block;
   font-family: Lato, sans-serif;
   font-style: normal;
-  font-size:18px;
+  font-size: 18px;
   font-weight: normal;
   line-height: 22px;
   padding-left: 135px;
@@ -142,7 +139,6 @@ export default {
 /* оформляем блок с содержанием */
 
 .box {
- 
   padding: 30px 0 73px 135px;
   font-family: Lato, sans-serif;
   font-size: 16px;
@@ -153,5 +149,4 @@ export default {
 }
 
 /* значения встраиваемых картинок в блоки */
-
 </style>
